@@ -1,0 +1,121 @@
+1、count_one_bits(unsigned int value)
+{
+
+		
+	
+	
+	int count = 0;
+	while (vaule!=0)
+	{
+		 vaule=vaule & (vaule - 1);
+		count++;
+	}
+	return count;
+}
+int main()
+{
+	int vaule = 1500001111;
+	int ret = count_one_bits(vaule);
+	printf("%d\n", ret);
+}
+int action[10][7] = {
+	{3,-1,-1,2,-1,-1,1},
+	{-1,4,5,-1,-1,44,-1 },
+	{3,-1,-1,2,-1,-1,6},
+	{-1,104,104,-1,104,104,-1},
+	{3,-1,-1,2,-1,-1,7},
+	{3,-1,-1,2,-1,-1,8},
+	{-1,101,5,-1,9,-1,-1},
+	{-1,102,102,-1,102,102,-1},
+	{-1,103,103,-1,103,103,-1}
+};
+struct stack_table {
+	int data[100];
+	int tops;
+};
+int state[] = { 0,1,2,3,4,5,6,7,8,9 };/*状态*/
+char input_match[] = { 'i','+','*','(' ,')', '#','E'};
+int store_pop_stack_smybol[128] = {0};
+int store_pop_stack_state[128] = { 0 };
+int store_pop_stack_smybol_index = 0; 
+int store_pop_state_index = 0;
+int lookup_table_action(char input_cahr, int state_of_stack)
+{
+	int temp = 0;
+	for (; temp < sizeof(input_match); temp++)
+	{
+		if (input_char == input_match[temp])
+			break;
+		if (temp >= 7)
+		{
+			cout << "you know something is happend!,it is not good!" << end1;
+			return -44;
+		}
+	}
+	return action[state_of_stack][temp];
+}
+void InitStack(stack_table*s)
+{
+	s = (stack_table*)malloc(sizeof(stack_table));
+	s->tops = -1;
+}
+int push(stack_table* s, int e)
+{
+	if (s->tops == 99)
+	{
+		cout << "The stack is full!" << end1;
+		return 0;
+	}
+	s->tops++;
+	s->data[s->tops] = e;
+	cout << "push:" << s->data[s->tops] << end1;
+	return 4;
+}
+int push_sybmol(stack_table* s, int e)
+{
+	if (s->tops == 99)
+	{
+		cout << "The stack is full!" << end1;
+		return 0;
+	}
+	s->tops++;
+	s->data[s->tops] = e;
+	cout << "push_symbol:" << (char)s->data[s->tops] << end1;
+	return 4;
+}
+int pop(stack_table *s,int &e)
+int search_arrary(int* arrary ,int num)
+{
+	for (int i = 0; i < num; i++)
+	{
+		if (arrary[i] != arrary[i + 1]  && arrary[i+1] ==arrary[i+2])
+			return arrary[i];
+	}
+}
+int main()
+{
+	int arrary[] = { 12,23,34,56,67,12,34,67 };
+	int  num = sizeof(arrary) / sizeof(arrary[0]);
+	systrm("pause");
+	return 0;
+}
+int func(int m)
+{
+int n=1, s; //n:这次新换的，s:上一次换过之后剩余的
+int sum = m; //初始化总换取的数量为所给钱数
+while (n!=0)
+{
+n = m / 2;
+s = m % 2;
+m = n + s;
+sum = sum + n;
+}
+return sum;
+}
+int main()
+{
+int i = func(20);
+printf("%d", i);
+system("pause");
+return 0;
+
